@@ -1,0 +1,27 @@
+<div>
+  <!--attribute binding-->
+  <img [src]="imageUrl"/>
+  <table>
+    <tr>
+      <td [attr.colspan]="colSpan">ee</td>
+    </tr>
+  </table>
+  <!--class binding-->
+
+  <button class="btn btn-primary" [class.active]="isActive">Class binding</button>
+    <!--style binding-->
+
+  <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue': 'red'">Class binding</button>
+
+  <!--Template variable-->
+  <div>
+    <input #test  type="text" (keyup.space)="onKeyUpSpace(test.value)">
+  </div>
+  <!--two way binding-->
+  <div>
+    <!-- <input [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp()"> -->
+    <input [(ngModel)]="email" (keyup.enter)=" onKeyUp()">
+  </div>
+   <!--custom pipe example-->
+   {{text | summary : 10}}
+</div>

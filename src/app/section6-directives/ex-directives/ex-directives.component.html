@@ -1,0 +1,74 @@
+<!--If Directive-->
+<div *ngIf="courses.length > 0">
+  List of courses
+</div>
+<div *ngIf="courses.length == 0">
+  No Courses
+</div>
+<!--else If Directive-->
+<div *ngIf="students.length > 0; then studentList else  nostrudents"> </div>
+<ng-template #studentList>
+  Student List
+ </ng-template>
+ <ng-template #nostrudents>
+  No Students
+ </ng-template>
+<!--Switchcase Example-->
+ <ul class="nav nav-pills">
+  <li  [class.active]="viewMode == 'map'">
+    <button (click)="viewMode = 'map'">Map View</button>
+  </li >
+  <li  [class.active]="viewMode == 'list'" style="padding-left:20px;">
+    <button (click)="viewMode = 'list'">List View </button>
+  </li>
+   
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">
+    Map View Content
+  </div>
+  <div *ngSwitchCase="'list'">
+    List View Content
+  </div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<ul>
+  <!-- <li *ngFor="let coursename of courseNames; index as i ">
+   {{i}} - {{coursename.name}}
+  </li> -->
+  <li *ngFor="let coursename of courseNames; even as isEven">
+     {{coursename.name}} <span *ngIf="isEven">EVEN</span>  --
+     <button (click)="onRemove(coursename)">Remove</button>
+     <button (click)="onChange(coursename)">Update</button>
+   </li>
+   <li *ngFor="let coursename of courseNames; trackBy: trackCourse ">
+    {{i}} - {{coursename.name}}
+   </li>
+</ul>
+<!--Change detection-->
+<button (click)="onAdd()">Add</button>
+
+<button (click)="loadCourse()">LoadCourse</button>
+
+<!--ngStyle-->
+<br/>
+<button 
+[style.backgroundColor]="canSave ? 'blue' : 'gray'"
+[style.color]="canSave? 'white' : 'black'"
+[style.fontWeight] = "canSave ? 'bold' : 'normal'"
+>
+  Save</button>
+
+  <button [ngStyle]="{'background-color': canSave ? 'green' : 'red',
+'color': canSave ? 'white' : 'black' }"
+>
+  Cancel</button>
+
+    <!--Custom directive-->
+  <div>
+    <input type="text" appInputFormat='uppercase'> 
+  </div>
+
+  
+ 
