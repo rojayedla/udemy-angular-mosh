@@ -6,6 +6,7 @@ import { DataHandlingEventsComponent } from './section-4/data-handling-events/da
 import { ExDirectivesComponent } from './section6-directives/ex-directives/ex-directives.component';
 import { ContactFormComponent } from './section7-temp-driven-forms/contact-form/contact-form.component';
 import { SignupFormComponent } from './sec8-reactiveforms/signup-form/signup-form.component';
+import { ExCheckEditorComponent } from './check-editor-example/ex-check-editor/ex-check-editor.component';
  
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
    { path: 'sec6', component: ExDirectivesComponent},
    { path: 'sec7', component: ContactFormComponent},
    { path: 'sec8', component: SignupFormComponent},
+   {path: 'ng2checkeditor', component: ExCheckEditorComponent}
 
 
 ];

@@ -13,6 +13,8 @@ import { ExDirectivesComponent } from './section6-directives/ex-directives/ex-di
 import { InputFormatDirective } from './section6-directives/input-format.directive';
 import { ContactFormComponent } from './section7-temp-driven-forms/contact-form/contact-form.component';
 import { SignupFormComponent } from './sec8-reactiveforms/signup-form/signup-form.component';
+import { ExCheckEditorComponent } from './check-editor-example/ex-check-editor/ex-check-editor.component';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { SignupFormComponent } from './sec8-reactiveforms/signup-form/signup-for
     ExDirectivesComponent,
     InputFormatDirective,
     ContactFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    ExCheckEditorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
